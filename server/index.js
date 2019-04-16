@@ -11,14 +11,13 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 // Routes
-app.get('/status', (req,res) => {
+app.post('/register', (req, res) => {
     res.send({
-        message: "Hello World"
-    });
-})
+        message: `Hello ${req.body.email}! Your user was registered! have fun!`
+    })
+});
 
 // Actively listen on dynamic port
-app.listen(PORT , () => {
+app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`);
 })
- 
